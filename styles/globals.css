@@ -521,3 +521,40 @@ body.has-bar .fwa{display:none}
 section[id],#preq{scroll-margin-top:96px}
 .req .ok a{text-decoration:underline}
 .req button[disabled]{opacity:.6;cursor:progress}
+
+/* ===== contact v2 ===== */
+.contact{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px;align-items:stretch}
+.cinfo{position:relative;overflow:hidden;background:var(--foot);color:var(--foot-ink);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:24px;min-width:0}
+.cinfo::before{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(closest-side,rgba(44,69,216,.55),transparent);pointer-events:none}
+.cperson{position:relative;display:flex;align-items:center;gap:14px}
+.cperson b{display:block;font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
+.cperson small{display:block;color:rgba(242,243,245,.6);font-size:.82rem;margin-top:2px}
+.cav{flex:0 0 auto;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--hot);color:#fff;font-weight:700;letter-spacing:.02em}
+.crows{position:relative;display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.crow{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:inherit;text-decoration:none;min-width:0;transition:background .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease)}
+.crow:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.16);transform:translateX(3px)}
+.cic{flex:0 0 auto;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.1)}
+.cic svg{width:20px;height:20px}
+.crow.wa .cic{background:#25D366;color:#fff}
+.ctx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.ctx small{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(242,243,245,.55);font-weight:600}
+.ctx b{font-weight:500;font-size:.98rem;line-height:1.35;overflow-wrap:anywhere}
+.crow.addr .ctx b{font-size:.9rem;color:rgba(242,243,245,.85)}
+.cgo{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:rgba(242,243,245,.6);transition:background .25s var(--ease),color .25s var(--ease)}
+.cgo svg{width:14px;height:14px}
+.crow:hover .cgo{background:#fff;color:var(--ink)}
+.cform{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.cfh b{display:block;font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
+.cfh small{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}
+.req{gap:14px}
+.req label{font-size:.8rem;font-weight:500;color:var(--muted);gap:7px}
+.req input,.req textarea,.req select{background:var(--bg);border:1px solid transparent;border-radius:12px;padding:14px 16px;font-size:.98rem;transition:border-color .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease)}
+.req input:hover,.req textarea:hover,.req select:hover{border-color:var(--line)}
+.req input:focus,.req textarea:focus,.req select:focus{outline:none;background:var(--surface);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.req textarea{min-height:120px}
+.req select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:52px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23ffffff'/%3E%3Cpath d='M11 14l5 5 5-5' fill='none' stroke='%230D0F14' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:32px 32px}
+.req select:focus{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23E8EBFC'/%3E%3Cpath d='M11 14l5 5 5-5' fill='none' stroke='%232C45D8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.req button[type=submit]{align-self:stretch!important;padding:16px 22px;border-radius:12px;font-size:1rem;justify-content:center}
+.req .ok{font-size:.9rem;padding:12px 14px;border-radius:12px;background:var(--accent-soft)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+@media (max-width:520px){.cinfo,.cform{padding:20px;border-radius:var(--r-md)}.crow{padding:10px 12px}.cic{width:36px;height:36px}}
