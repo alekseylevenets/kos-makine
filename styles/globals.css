@@ -580,3 +580,6 @@ footer::after{animation:glowR 8.5s ease-in-out infinite alternate}
   footer::before{left:-70vw}
   footer::after{right:-70vw;bottom:20%}
 }
+/* hero glows drift like the footer */
+.hero .glow.g1{animation:glowL 7s ease-in-out infinite alternate}
+.hero .glow.g2{animation:glowR 8.5s ease-in-out infinite alternate}
