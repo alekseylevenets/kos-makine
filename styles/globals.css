@@ -583,3 +583,12 @@ footer::after{animation:glowR 8.5s ease-in-out infinite alternate}
 /* hero glows drift like the footer */
 .hero .glow.g1{animation:glowL 7s ease-in-out infinite alternate}
 .hero .glow.g2{animation:glowR 8.5s ease-in-out infinite alternate}
+/* hero glows: faster, longer path */
+.hero .glow.g1{animation:heroGlowA 5s ease-in-out infinite alternate}
+.hero .glow.g2{animation:heroGlowB 6s ease-in-out infinite alternate}
+@keyframes heroGlowA{0%{transform:translate3d(-60px,40px,0) scale(.95)}35%{transform:translate3d(180px,-60px,0) scale(1.1)}70%{transform:translate3d(340px,-10px,0) scale(1)}100%{transform:translate3d(460px,-110px,0) scale(1.12)}}
+@keyframes heroGlowB{0%{transform:translate3d(60px,-40px,0) scale(.95)}35%{transform:translate3d(-200px,80px,0) scale(1.1)}70%{transform:translate3d(-380px,20px,0) scale(1)}100%{transform:translate3d(-500px,130px,0) scale(1.1)}}
+@media (max-width:900px){
+  @keyframes heroGlowA{0%{transform:translate3d(-40px,20px,0)}100%{transform:translate3d(220px,-80px,0) scale(1.1)}}
+  @keyframes heroGlowB{0%{transform:translate3d(40px,-20px,0)}100%{transform:translate3d(-240px,90px,0) scale(1.1)}}
+}
