@@ -558,3 +558,25 @@ section[id],#preq{scroll-margin-top:96px}
 .req .ok{font-size:.9rem;padding:12px 14px;border-radius:12px;background:var(--accent-soft)}
 @media (max-width:860px){.contact{grid-template-columns:1fr}}
 @media (max-width:520px){.cinfo,.cform{padding:20px;border-radius:var(--r-md)}.crow{padding:10px 12px}.cic{width:36px;height:36px}}
+
+/* ===== footer glow + floating buttons position ===== */
+footer{position:relative;overflow:clip;isolation:isolate}
+footer::before,footer::after{content:"";position:absolute;z-index:-1;pointer-events:none;width:min(900px,90vw);aspect-ratio:1;border-radius:50%;filter:blur(40px)}
+footer::before{left:max(-300px,-25vw);bottom:-55%;background:radial-gradient(closest-side,rgba(44,69,216,.42),rgba(44,69,216,.16) 45%,rgba(44,69,216,0) 100%)}
+footer::after{right:max(-300px,-25vw);bottom:-55%;background:radial-gradient(closest-side,rgba(255,90,31,.34),rgba(255,90,31,.12) 45%,rgba(255,90,31,0) 100%)}
+.fwa{right:max(32px,calc(env(safe-area-inset-right,0px) + 32px));bottom:calc(env(safe-area-inset-bottom,0px) + 32px)}
+.totop{right:max(36px,calc(env(safe-area-inset-right,0px) + 36px));bottom:calc(env(safe-area-inset-bottom,0px) + 100px)}
+@media (max-width:900px){
+  .fwa{right:max(20px,calc(env(safe-area-inset-right,0px) + 20px));bottom:calc(env(safe-area-inset-bottom,0px) + 24px)}
+  .totop{right:max(26px,calc(env(safe-area-inset-right,0px) + 26px));bottom:calc(env(safe-area-inset-bottom,0px) + 90px)}
+  body.has-bar .totop{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
+}
+footer::before{animation:glowL 16s ease-in-out infinite alternate}
+footer::after{animation:glowR 19s ease-in-out infinite alternate}
+@keyframes glowL{0%{transform:translate3d(-6%,0,0) scale(1)}50%{transform:translate3d(10%,-4%,0) scale(1.08)}100%{transform:translate3d(22%,2%,0) scale(.96)}}
+@keyframes glowR{0%{transform:translate3d(6%,0,0) scale(1)}50%{transform:translate3d(-12%,-5%,0) scale(1.06)}100%{transform:translate3d(-22%,3%,0) scale(.97)}}
+@media (max-width:900px){
+  footer::before,footer::after{width:140vw;bottom:-20%;filter:blur(30px)}
+  footer::before{left:-70vw}
+  footer::after{right:-70vw;bottom:20%}
+}
