@@ -592,3 +592,12 @@ footer::after{animation:glowR 8.5s ease-in-out infinite alternate}
   @keyframes heroGlowA{0%{transform:translate3d(-40px,20px,0)}100%{transform:translate3d(220px,-80px,0) scale(1.1)}}
   @keyframes heroGlowB{0%{transform:translate3d(40px,-20px,0)}100%{transform:translate3d(-240px,90px,0) scale(1.1)}}
 }
+/* footer glows: same speed and path length as hero */
+footer::before{animation:footGlowA 5s ease-in-out infinite alternate}
+footer::after{animation:footGlowB 6s ease-in-out infinite alternate}
+@keyframes footGlowA{0%{transform:translate3d(-80px,30px,0) scale(.95)}35%{transform:translate3d(160px,-70px,0) scale(1.08)}70%{transform:translate3d(320px,-20px,0) scale(1)}100%{transform:translate3d(460px,-100px,0) scale(1.1)}}
+@keyframes footGlowB{0%{transform:translate3d(80px,-30px,0) scale(.95)}35%{transform:translate3d(-180px,60px,0) scale(1.08)}70%{transform:translate3d(-340px,10px,0) scale(1)}100%{transform:translate3d(-480px,90px,0) scale(1.1)}}
+@media (max-width:900px){
+  @keyframes footGlowA{0%{transform:translate3d(-40px,20px,0)}100%{transform:translate3d(200px,-120px,0) scale(1.1)}}
+  @keyframes footGlowB{0%{transform:translate3d(40px,-20px,0)}100%{transform:translate3d(-220px,140px,0) scale(1.1)}}
+}
